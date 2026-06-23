@@ -15,3 +15,9 @@ jobs:
 
       - name: Build Docker Image
         run: docker build -t habit-tracker .
+
+      - name: Run Trivy Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: habit-tracker
+          format: table
